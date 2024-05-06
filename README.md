@@ -2,8 +2,8 @@
 
 Rest Rant colors
 -Primary    #FE4A49
--Sexondary  #FBBA72
-Hightlight  #D6FFF6
+-Secondary  #FBBA72
+-Hightlight  #D6FFF6
 
 REST-Rant is an app where users can review restaurants.
 
@@ -37,3 +37,4 @@ REST-Rant is an app where users can review restaurants.
 | state     | string    |
 | cuisines  | string    |
 | pic       | string    |
+
