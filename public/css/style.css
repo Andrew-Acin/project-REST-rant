@@ -2,3 +2,28 @@ h1 {
     text-align: center;
     color: cornflowerblue;
 }
+
+p {
+    text-align: center;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+}
+
+.image-text {
+    display: flex;
+    justify-content: center;
+    padding-top: 10px;
+    padding-bottom: 15px;
+}
+
+.button {
+    display: flex;
+    justify-content: center;
+}
+
+img {
+    height: 500px;
+}
