@@ -8,7 +8,6 @@ function home () {
                 <h1>REST-Rant</h1>
                 <div className="image">
                     <img src="\images\chia-fruit-drink.jpg" alt="chia fruit shake" />
-                    <br/>
                 </div>
 
                 <div className="image-text">
