@@ -1,13 +1,15 @@
+const express = require('express')
 const router = require('express').Router()
-// const router = express.Router()
-// const express = require('express')
-// const app = express()
 
 
 // GET /places/new
 router.get('/new', (req, res) => {
+    console.log(req.body)
     res.render('places/new')
 })
+
+
+
 
 // GET /places
 router.get('/', (req, res) => {
