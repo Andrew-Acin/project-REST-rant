@@ -10,7 +10,7 @@ router.get('/new', (req, res) => {
 
 // POST /places
 router.post('/', (req, res) => {
-    console.log(req.body)
+    // console.log(req.body)
     if (!req.body.pic) {
         // Default image if one is not provided
         req.body.pic = 'public/images/kitten.jpg'
@@ -22,6 +22,7 @@ router.post('/', (req, res) => {
         req.body.state = 'USA'
     }
     places.push(req.body)
+    console.log(places)
     res.redirect('/places')
 })
 
