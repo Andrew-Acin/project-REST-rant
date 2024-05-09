@@ -21,7 +21,7 @@ router.post('/', (req, res) => {
     // console.log(req.body)
     if (!req.body.pic) {
         // Default image if one is not provided
-        req.body.pic = 'public/images/kitten.jpg'
+        req.body.pic = '/images/kitten.jpg'
     }
     if (!req.body.city) {
         req.body.city = 'Anytown'
