@@ -72,3 +72,8 @@ main {
   margin-left: 20px;
   background-color: white;
 }
+
+.show-main {
+    display: flex;
+    justify-content: space-evenly;
+}

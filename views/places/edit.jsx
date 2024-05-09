@@ -10,26 +10,31 @@ function edit_form(data) {
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="name">Place Name</label>
-                            <input className="form-control" id="name" name="name" value={data.place.name} required />
+                            <input className="form-control" id="name" name="name" required defaultValue={data.place.name}  />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="pic">Place Picture</label>
-                            <input className="form-control" id="pic" name="pic" />
+                            <input className="form-control" id="pic" name="pic" required defaultValue={data.place.pic} />
                         </div>
+                    </div>    
+                    <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="city">City</label>
-                            <input className="form-control" id="city" name="city" />
+                            <input className="form-control" id="city" name="city" required defaultValue={data.place.city} />
                         </div>
                         <div className="form-group col-sm-6">
                             <label htmlFor="state">State</label>
-                            <input className="form-control" id="state" name="state" />
+                            <input className="form-control" id="state" name="state" required defaultValue={data.place.state} />
                         </div>
+                    </div>    
+                    <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="cuisines">Cuisines</label>
-                            <input className="form-control" id="cuisines" name="cuisines" required />
+                            <input className="form-control" id="cuisines" name="cuisines" required defaultValue={data.place.cuisines} />
                         </div>
-                  </div>
-                    <input className="btn btn-primary" type="submit" value="Add Place" />
+                    </div>
+                  <br/>
+                    <input className="btn btn-primary" type="submit" value="Update Place" />
                 </form>
             </main>
         </Def>
