@@ -7,6 +7,9 @@ function show(data) {
             <main className="show-main">
                 <div>
                    <img src={data.place.pic}></img>
+                   <h3>
+                        Located in {data.place.city}, {data.place.state}
+                   </h3>
                 </div>
                 <div>
                     <h1>{data.place.name}</h1>
@@ -16,7 +19,12 @@ function show(data) {
                     </section>
                     <section>
                         <h2>Description</h2>
-                        <p>Located in {data.place.city}, {data.place.state}</p>
+                        <h3>
+                            {data.place.showEstablished()}
+                        </h3>
+                        <h4>
+                            Serving {data.place.cuisines}
+                        </h4>
                     </section>
                     <section>
                         <h2>Comments</h2>
