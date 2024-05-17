@@ -78,3 +78,7 @@ main {
     justify-content: space-evenly;
 }
 
+.alert-danger {
+    background-color: #ffc7c7;
+    color: #9e0000;
+}
