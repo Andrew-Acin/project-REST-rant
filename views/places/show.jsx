@@ -2,6 +2,23 @@ const React = require('react')
 const Def = require('../default')
 
 function show(data) {
+    let comments = (
+        <h3 className="inactive">No comments yet!!</h3>
+    )
+    if (data.place.comments.length) {
+        comments = data.place.comments.map(c => {
+            return (
+                <div className="border" key={c.id}>
+                    <h2 className="rant">{c.rant ? 'Rant! 😡' : 'Rave! 😻'}</h2>
+                    <h4>{c.content}</h4>
+                    <h3>
+                        <strong>- {c.author}</strong>
+                    </h3>
+                    <h4>Rating: {c.stars}</h4>
+                </div>
+            )
+        })
+    }
     return (
         <Def>
             <main className="show-main">
@@ -28,8 +45,42 @@ function show(data) {
                     </section>
                     <section>
                         <h2>Comments</h2>
-                        <p>No Comments yet!</p>
+                        {comments}
                     </section>
+                    <div>
+                        <h2>Leave a Review</h2>
+                        <form id="comment-form" action={`/places/${data.place.id}/comment`} method="POST">
+                            <div className="comment-layouts">
+                                <label htmlFor="author">Author</label>
+                                <input type="text" name="author"></input>
+
+                                <label htmlFor="content">Content</label>
+                                <input type="textarea" name="content"></input>
+                            </div><br/>
+                            <div className="other-form-layouts">
+                                <div className="star-rating">
+                                    <label htmlFor="star-rating">Star Rating</label><br/>
+                                    <input type="range" name="star-rating" min="0" max="5" step="0.5" required></input><br/>
+                                    <datalist id="values">
+                                        <option values="0" label="0"></option>
+                                        <option values="1" label="1"></option>
+                                        <option values="2" label="2"></option>
+                                        <option values="3" label="3"></option>
+                                        <option values="4" label="4"></option>
+                                        <option values="5" label="5"></option>
+                                    </datalist>
+                                </div>    
+                                <div>  
+                                    <label htmlFor="rant">Rant</label><br/>
+                                    <input type="checkbox" name="rant" id="rant"></input>
+                                </div>
+                                <div>
+
+                                    <button type="submit">Add Comment</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
                 </div>
             </main>
 

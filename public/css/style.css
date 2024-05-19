@@ -82,3 +82,47 @@ main {
     background-color: #ffc7c7;
     color: #9e0000;
 }
+
+#comment-form {
+    padding: 5px;
+    color: lightblue;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.comment-layouts {
+    display: flex;
+    justify-content: space-between;
+}
+
+.star-rating {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.other-form-layouts {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+
+datalist {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    writing-mode: vertical-lr;
+    width: 200px;
+}
+
+option {
+    padding: 0;
+}
+
+input[type="range"] {
+    width: 200px;
+    margin: 0;
+}
