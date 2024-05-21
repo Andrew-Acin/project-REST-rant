@@ -6,7 +6,7 @@ function edit_form({ place, id }) {
         <Def>
             <main>
                 <h1>Edit Place</h1>                
-                <form method="POST" action={`/places/${id}?_method=PUT`}>
+                <form method="POST" action={`/places/${place.id}?_method=PUT`}>
                     <div className="row">
                         <div className="form-group col-sm-6">
                             <label htmlFor="name">Place Name</label>
@@ -32,7 +32,15 @@ function edit_form({ place, id }) {
                             <label htmlFor="cuisines">Cuisines</label>
                             <input className="form-control" id="cuisines" name="cuisines" required defaultValue={place.cuisines} />
                         </div>
-                    </div>
+                        <div className="form-group col-sm-6">
+                            <label htmlFor="founded">Founded</label>
+                            <input className="form-control"
+                                id="founded"
+                                name="founded"
+                                defaultValue={place.founded}
+                            />
+                        </div>
+                    </div>                    
                   <br/>
                     <input className="btn btn-primary" type="submit" value="Update Place" />
                 </form>
@@ -42,3 +50,4 @@ function edit_form({ place, id }) {
 }
 
 module.exports = edit_form
+
