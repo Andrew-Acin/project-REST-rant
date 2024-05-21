@@ -93,3 +93,6 @@ function show(data) {
         </Def>
     );
 }
+
+
+module.exports = show;
