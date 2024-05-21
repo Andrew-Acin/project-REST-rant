@@ -73,26 +73,38 @@ router.get('/:id/edit', (req, res) => {
 //     res.send('GET /places/:id/rant stub')
 // })
 
-router.post('/:id/comment', (req, res) => {
-    console.log(req.body)
+router.post("/:id/comment", (req, res) => {
+    console.log(req.body);
+
+    // Ensure that the stars field is correctly parsed as a number
+    req.body.stars = parseFloat(req.body.stars);
+    req.body.rant = req.body.rant ? true : false;
+
     db.Place.findById(req.params.id)
-        .then(place => {
+        .then((place) => {
             db.Comment.create(req.body)
-                .then(comment => {
-                    place.comments.push(comment.id)
-                    place.save()
+                .then((comment) => {
+                    place.comments.push(comment.id);
+                    place
+                        .save()
                         .then(() => {
-                            res.redirect(`/places/${req.params.id}`)
+                            res.redirect(`/places/${req.params.id}`);
                         })
+                        .catch((err) => {
+                            console.log(err);
+                            res.render("error404");
+                        });
                 })
-                .catch(err => {
-                    res.render('error404')
-                })
+                .catch((err) => {
+                    console.log(err);
+                    res.render("error404");
+                });
         })
-        .catch(err => {
-            res.render('error404')
-        })
-})
+        .catch((err) => {
+            console.log(err);
+            res.render("error404");
+        });
+});
 
 
 
