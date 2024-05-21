@@ -130,4 +130,27 @@ router.delete('/:id', (req, res) => {
 })
 
 
+// Delete comment route
+router.delete('/:placeId/comment/:commentId', (req, res) => {
+    const { placeId, commentId } = req.params;
+
+    db.Place.findById(placeId)
+        .then(place => {
+            const index = place.comments.indexOf(commentId);
+            if (index !== -1) {
+                place.comments.splice(index, 1);
+                return place.save();
+            } else {
+                return Promise.reject({ message: 'Comment not found' });
+            }
+        })
+        .then(() => {
+            res.redirect(`/places/${placeId}`);
+        })
+        .catch(err => {
+            console.log(err);
+            res.render("error404");
+        });
+});
+
 module.exports = router

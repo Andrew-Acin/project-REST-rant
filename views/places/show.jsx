@@ -35,6 +35,9 @@ function show(data) {
                         <strong>- {c.author}</strong>
                     </h3>
                     <h4>Rating: {c.stars}</h4>
+                    <form method="POST" action={`/places/${data.place._id}/comment/${c._id}?_method=DELETE`}>
+                        <input type="submit" className="btn btn-danger" value="Delete Comment" />
+                    </form>
                 </div>
             );
         });
